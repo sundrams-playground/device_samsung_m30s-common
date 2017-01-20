@@ -93,6 +93,9 @@
         <item>"gprs:4092,8760,11680,4096,8760,11680"</item>
     </string-array>
 
+    <!-- FP trustlet limits the number to 4. -->
+    <integer name="config_fingerprintMaxTemplatesPerUser">4</integer>
+
     <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
 
