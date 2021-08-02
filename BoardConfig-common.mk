@@ -85,6 +85,10 @@ TARGET_KERNEL_CLANG_VERSION := r383902
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
+# HIDL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    vendor/lineage/config/device_framework_matrix.xml
+
 # VINTF (Vendor Interface)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
