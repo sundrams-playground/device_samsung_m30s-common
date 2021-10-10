@@ -74,6 +74,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Fingerprint
 TARGET_SEC_FP_HAS_FINGERPRINT_GESTURES := true
 
+## Graphics
+TARGET_USES_VULKAN := true
+
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/samsung/m30s
