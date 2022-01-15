@@ -77,7 +77,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_SOURCE := kernel/samsung/m30s-common
+TARGET_KERNEL_SOURCE := kernel/samsung/m30s
 TARGET_KERNEL_CONFIG := m30s_defconfig
 
 ## Keymaster
