@@ -20,5 +20,6 @@ cc_library_static {
     srcs: ["init_m30s.cpp"],
     whole_static_libs: ["libinit_m30s"],
     include_dirs: ["system/core/init"],
+    header_libs: ["libbase_headers"],
     recovery_available: true,
 }
