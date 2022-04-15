@@ -13,6 +13,7 @@ ro.config.vc_call_vol_steps=8
 ro.charger.enable_suspend=true
 
 ## Bluetooth
+bluetooth.device.default_name=Galaxy m30s
 bluetooth.profile.asha.central.enabled=true
 bluetooth.profile.a2dp.source.enabled=true
 bluetooth.profile.avrcp.target.enabled=true
