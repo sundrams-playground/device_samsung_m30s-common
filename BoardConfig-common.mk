@@ -86,6 +86,7 @@ TARGET_KEYMASTER_VARIANT := samsung
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(COMMON_PATH)/device_framework_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
 
 # VINTF (Vendor Interface)
