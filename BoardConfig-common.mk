@@ -79,6 +79,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/m30s
 TARGET_KERNEL_CONFIG := m30s_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+TARGET_KERNEL_OPTIONAL_LD := true
 
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
