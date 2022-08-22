@@ -110,8 +110,7 @@ TARGET_BOARD_PLATFORM := universal9611
 TARGET_BOOTLOADER_BOARD_NAME := exynos9611
 TARGET_SOC := exynos9611
 
-# Properties
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
+## Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Recovery
