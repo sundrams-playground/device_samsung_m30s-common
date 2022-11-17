@@ -56,6 +56,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Display
 TARGET_SCREEN_DENSITY := 420
+BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 
 # DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -119,6 +120,7 @@ BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := universal9611
 TARGET_BOOTLOADER_BOARD_NAME := exynos9611
 TARGET_SOC := exynos9611
+include hardware/samsung_slsi-linaro/config/BoardConfig9611.mk
 
 ## Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
