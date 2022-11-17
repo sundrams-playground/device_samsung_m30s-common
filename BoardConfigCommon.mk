@@ -58,6 +58,7 @@ SOONG_CONFIG_samsungCameraVars_extra_ids := 0,1,2
 
 # Display
 TARGET_SCREEN_DENSITY := 420
+BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 
 # Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
@@ -116,6 +117,7 @@ BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := universal9611
 TARGET_BOOTLOADER_BOARD_NAME := exynos9611
 TARGET_SOC := exynos9611
+include hardware/samsung_slsi-linaro/config/BoardConfig9611.mk
 
 ## Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
