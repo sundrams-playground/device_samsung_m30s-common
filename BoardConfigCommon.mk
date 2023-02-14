@@ -1,45 +1,38 @@
 #
-# Copyright (C) 2020-2021 The LineageOS Project
+# Copyright (C) 2020-2023 The LineageOS Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# SPDX-License-Identifier: Apache-2.0
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 COMMON_PATH := device/samsung/m30s-common
 
-## Include path
+# Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
-## Inherit proprietary vendor configuartion
+# Inherit proprietary vendor configuartion
 include vendor/samsung/m30s-common/BoardConfigVendor.mk
 
-## Architecture
+# Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := cortex-a53
 
-## Architecture (Secondary)
+# Architecture (Secondary)
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
-## Bluetooth
+# Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true
 
-## Boot Image
+# Boot Image
 BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_DTB_OFFSET := 0x00000000
@@ -57,17 +50,17 @@ BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
-## Build system
+# Build system
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-## Display
+# Display
 TARGET_SCREEN_DENSITY := 420
 
-## DTBO
+# DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_DEVICE).cfg
 
-## Filesystem
+# Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -79,20 +72,20 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Fingerprint
 TARGET_SEC_FP_HAS_FINGERPRINT_GESTURES := true
 
-## Kernel
+# Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/m30s
 TARGET_KERNEL_CONFIG := m30s_defconfig
 
-## Keymaster
+# Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
-## Manifest
+# Manifest
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
-## Partitions
+# Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 57671680
 BOARD_CACHEIMAGE_PARTITION_SIZE := 314572800
 BOARD_DTBIMG_PARTITION_SIZE := 8388608
@@ -104,38 +97,38 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 629145600
 
 BOARD_ROOT_EXTRA_FOLDERS := efs
 
-## Platform
+# Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := universal9611
 TARGET_BOOTLOADER_BOARD_NAME := exynos9611
 TARGET_SOC := exynos9611
 
-## Properties
+# Properties
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
-## Recovery
+# Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9611
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 
-## Releasetools
+# Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
-## RIL
+# RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
-## Security
+# Security
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
-## SELinux
+# SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
 include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
-## Verified Boot
+# Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --include_descriptors_from_image $(PRODUCT_OUT)/dtb.img
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
@@ -145,7 +138,7 @@ BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
-## Wi-Fi
+# Wi-Fi
 BOARD_WLAN_DEVICE                := slsi
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_slsi
