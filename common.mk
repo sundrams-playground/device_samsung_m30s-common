@@ -161,6 +161,10 @@ PRODUCT_PACKAGES += \
 # Livedisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.samsung-exynos
+    
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
 
 # Media
 PRODUCT_COPY_FILES += \
