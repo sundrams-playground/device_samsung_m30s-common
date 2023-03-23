@@ -81,9 +81,9 @@ TARGET_KERNEL_CONFIG := m30s_defconfig
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
-# Manifest
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+# VINTF (Vendor Interface)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 57671680
