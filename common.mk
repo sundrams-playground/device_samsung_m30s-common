@@ -243,6 +243,11 @@ PRODUCT_PACKAGES += \
      vendor.samsung_ext.framework.battery-service \
      SmartCharge
 
+# Samsung Ext Flash
+PRODUCT_PACKAGES += \
+     vendor.samsung_ext.hardware.camera.flashlight-service \
+     FlashControl
+
 # Shims
 PRODUCT_PACKAGES += \
     libshim_sensorndkbridge
