@@ -238,6 +238,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.samsung-multihal
 
+# Samsung Ext SmartCharge
+PRODUCT_PACKAGES += \
+     vendor.samsung_ext.framework.battery-service \
+     SmartCharge
+
 # Shims
 PRODUCT_PACKAGES += \
     libshim_sensorndkbridge
