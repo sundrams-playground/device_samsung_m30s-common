@@ -66,6 +66,9 @@ function blob_fixup() {
         vendor/lib*/libsensorlistener.so)
             "${PATCHELF}" --add-needed libshim_sensorndkbridge.so "${2}"
             ;;
+        vendor/lib*/libcrypto-compat.so)
+            "${PATCHELF}" --set-soname libcrypto-compat.so "${2}"
+            ;;
     esac
 }
 

@@ -255,3 +255,6 @@ vendor/etc/wifi/mx140_wlan_t.hcf
 vendor/etc/wifi/mx140_wlan_t_sw.hcf
 vendor/etc/wifi/platform.txt
 vendor/etc/wifi/slsi_reg_database.bin
+
+## libcrypto - built from external/boringssl@42125132 with changes done to asn1t.h in 9211b80 reverted
+-vendor/lib64/libcrypto-compat.so|c62caa1fb25df46cc343376fdb03ced8607f6cda
