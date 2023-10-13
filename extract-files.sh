@@ -69,6 +69,9 @@ function blob_fixup() {
         vendor/lib*/libcrypto-compat.so)
             "${PATCHELF}" --set-soname libcrypto-compat.so "${2}"
             ;;
+        vendor/lib/libwvhidl.so)
+            "${PATCHELF}" --replace-needed libprotobuf-cpp-lite-3.9.1.so libprotobuf-cpp-full-3.9.1.so "${2}"
+            ;;
     esac
 }
 
