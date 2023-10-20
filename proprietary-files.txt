@@ -5,31 +5,6 @@ vendor/etc/default_volume_tables.xml
 vendor/etc/dolby/dax-default.xml
 vendor/etc/mixer_paths.xml
 vendor/etc/usb_audio_policy_configuration.xml
-vendor/lib/vndk/libtinyalsa.so
-vendor/lib/vndk/libaudioroute.so
-vendor/lib/libsamsungDiamondVoice.so
-vendor/lib/libSamsungPostProcessConvertor.so
-vendor/lib/lib_SamsungRec_07001.so
-vendor/lib/lib_SoundAlive_SRC384_ver320.so
-vendor/lib/lib_soundaliveresampler.so
-vendor/lib/libaboxpcmdump.so
-vendor/lib/libalsautils_sec.so
-vendor/lib/libaudio_soundtrigger.so
-vendor/lib/libaudioproxy.so
-vendor/lib/libdatamod.so
-vendor/lib/libfloatingfeature.so
-vendor/lib/libprofileparamstorage.so
-vendor/lib/librecordalive.so
-vendor/lib/libsecaudiocoreutils.so
-vendor/lib/libsecaudioinfo.so
-vendor/lib/lib_SoundBooster_ver1000.so
-vendor/lib/soundfx/libaudioeffectoffload.so
-vendor/lib/soundfx/libsamsungSoundbooster_plus.so
-vendor/lib64/libfloatingfeature.so
-vendor/lib64/libsecaudioinfo.so
-vendor/lib64/lib_SoundBooster_ver1000.so
-vendor/lib64/soundfx/libaudioeffectoffload.so
-vendor/lib64/soundfx/libsamsungSoundbooster_plus.so
 
 ## Audio Firmware
 vendor/firmware/APBargeIn_AUDIO_SLSI.bin
@@ -123,7 +98,6 @@ vendor/firmware/fimc_is_lib.bin
 vendor/firmware/fimc_is_rta.bin
 
 ## RIL
-vendor/lib/libaudio-ril.so
 vendor/lib/libsecril-client.so
 
 ## SECNATIVE
