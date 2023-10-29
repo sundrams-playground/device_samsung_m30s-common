@@ -6,9 +6,6 @@
 
 COMMON_PATH := device/samsung/m30s-common
 
-# Include path
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
-
 # Inherit proprietary vendor configuartion
 include vendor/samsung/m30s-common/BoardConfigVendor.mk
 
