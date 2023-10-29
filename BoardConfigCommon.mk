@@ -6,9 +6,6 @@
 
 COMMON_PATH := device/samsung/m30s-common
 
-# Include path
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
-
 # Inherit proprietary vendor configuartion
 include vendor/samsung/m30s-common/BoardConfigVendor.mk
 
@@ -53,6 +50,11 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 # Build system
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
+# Camera
+SOONG_CONFIG_NAMESPACES += samsungCameraVars
+SOONG_CONFIG_samsungCameraVars += extra_ids
+SOONG_CONFIG_samsungCameraVars_extra_ids := 0,1,2
 
 # Display
 TARGET_SCREEN_DENSITY := 420
