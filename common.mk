@@ -117,8 +117,8 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 PRODUCT_PACKAGES += \
     android.hardware.health-service.samsung \
     android.hardware.health-service.samsung-recovery \
-    android.hardware.health@2.0-service \
-    android.hardware.health@2.0-impl
+    android.hardware.health@2.1-service \
+    android.hardware.health@2.1-impl
 
 # HIDL
 PRODUCT_PACKAGES += \
