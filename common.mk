@@ -19,6 +19,9 @@ COMMON_PATH := device/samsung/m30s-common
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/m30s-common/m30s-common-vendor.mk)
 
+# Updatable APEX'es
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
