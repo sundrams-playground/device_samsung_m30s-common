@@ -158,10 +158,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.samsung
 
-# Livedisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.samsung-exynos
-
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
@@ -243,16 +239,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.samsung-multihal
 
-# Samsung Ext SmartCharge
-PRODUCT_PACKAGES += \
-     vendor.samsung_ext.framework.battery-service \
-     SmartCharge
-
-# Samsung Ext Flash
-PRODUCT_PACKAGES += \
-     vendor.samsung_ext.hardware.camera.flashlight-service \
-     FlashControl
-
 # Shims
 PRODUCT_PACKAGES += \
     libshim_sensorndkbridge
@@ -276,9 +262,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.samsung
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
