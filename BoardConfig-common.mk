@@ -87,6 +87,10 @@ TARGET_KEYMASTER_VARIANT := samsung
 TARGET_KEYMASTER_ADDITIONAL_SHARED_LIBS := \
     libcrypto-compat
 
+# HIDL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(COMMON_PATH)/device_framework_matrix.xml
+
 # VINTF (Vendor Interface)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
