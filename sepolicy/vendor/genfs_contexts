@@ -34,6 +34,3 @@ genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                     
 
 # Kernel
 genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                                                u:object_r:sysfs_mem_boost_writable:s0
-
-# Battery
-genfscon sysfs /devices/platform/battery/power_supply/battery/batt_slate_mode				       u:object_r:sysfs_battery_writable:s0
