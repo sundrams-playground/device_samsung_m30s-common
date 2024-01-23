@@ -123,6 +123,11 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.samsung \
     android.hardware.health-service.samsung-recovery
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport_vendor \
+    libhwbinder_vendor
+
 # init
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/fstab.exynos9611:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos9611 \
