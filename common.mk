@@ -145,7 +145,6 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
-    libcrypto-v33 \
     libkeymaster4_1support.vendor:64
 
 # Remove packages
@@ -160,6 +159,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.samsung-exynos
     
+PRODUCT_PACKAGES += \
+    libcrypto-v33 \
+    libshim_crypto:64 \
+    libssl-v33
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
