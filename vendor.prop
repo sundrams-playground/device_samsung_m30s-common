@@ -11,6 +11,7 @@ aaudio.mmap_exclusive_policy=2
 aaudio.hw_burst_min_usec=2000
 af.fast_track_multiplier=1
 ro.config.vc_call_vol_steps=8
+ro.hardware.sound_trigger.primary=dummy
 
 ## Charger
 ro.charger.enable_suspend=true
