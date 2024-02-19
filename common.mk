@@ -51,7 +51,7 @@ PRODUCT_COPY_FILES += \
 
 # Biometric Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.samsung
+    android.hardware.biometrics.fingerprint-service.samsung
 
 # Bluetooth
 PRODUCT_PACKAGES += \
