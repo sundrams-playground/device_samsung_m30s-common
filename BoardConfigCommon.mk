@@ -144,7 +144,10 @@ include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
-# Verified Boot
+## USB
+$(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
+
+## Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --include_descriptors_from_image $(PRODUCT_OUT)/dtb.img
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
