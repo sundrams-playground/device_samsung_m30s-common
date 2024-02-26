@@ -19,6 +19,9 @@ COMMON_PATH := device/samsung/m30s-common
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/m30s-common/m30s-common-vendor.mk)
 
+# Soong namespaces
+$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
