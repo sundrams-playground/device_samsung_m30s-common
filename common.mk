@@ -179,6 +179,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.memtrack-service.samsung-mali
 
+# OpenCL
+PRODUCT_PACKAGES += \
+    libOpenCL_symlink32 \
+    libOpenCL_symlink64 \
+    libOpenCL.1_symlink32 \
+    libOpenCL.1_symlink64 \
+    libOpenCL.1.1_symlink32 \
+    libOpenCL.1.1_symlink64
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-lineage
@@ -290,6 +299,11 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     libutils-v32
+
+# Vulkan
+PRODUCT_PACKAGES += \
+    vulkan.universal9611_symlink32 \
+    vulkan.universal9611_symlink64
 
 # WiFi
 PRODUCT_PACKAGES += \
