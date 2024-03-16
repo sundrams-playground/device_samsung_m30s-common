@@ -272,13 +272,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RemovePkgs
 
-# Ril
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    secril_config_svc
-
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.samsung-multihal
