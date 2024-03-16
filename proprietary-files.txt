@@ -123,9 +123,9 @@ vendor/lib64/libkeymaster_helper.so
 vendor/firmware/fimc_is_lib.bin
 vendor/firmware/fimc_is_rta.bin
 
-## RIL
-vendor/lib/libaudio-ril.so
-vendor/lib/libsecril-client.so
+## RIL - from a14 - A145FXXS5BXA1
+-vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos9611|96bf65152d221ac528b763f625bb93e56899033d
+-vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos9611|26efd845750d4ad91e3a5c5dd7d95d40e8ef52a8
 
 ## SECNATIVE
 vendor/lib/libsecnativefeature.so
