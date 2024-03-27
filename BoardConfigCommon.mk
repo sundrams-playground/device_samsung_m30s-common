@@ -84,6 +84,7 @@ TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 LLVM_IAS=1 HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 TARGET_KERNEL_OPTIONAL_LD := true
 TARGET_KERNEL_CLANG_VERSION := r383902
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
