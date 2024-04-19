@@ -8,7 +8,7 @@ aaudio.mmap_exclusive_policy=2
 aaudio.hw_burst_min_usec=2000
 af.fast_track_multiplier=1
 ro.config.vc_call_vol_steps=8
-
+	
 ## Charger
 ro.charger.enable_suspend=true
 
@@ -32,6 +32,10 @@ bluetooth.profile.sap.server.enabled=true
 ## Dalvik
 dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.lockprof.threshold=500
+
+## Fingerpint
+ro.vendor.fingerprint.type=rear
+ro.vendor.fingerprint.supports_gestures=true
 
 ## FRP
 ro.frp.pst=/dev/block/persistent
