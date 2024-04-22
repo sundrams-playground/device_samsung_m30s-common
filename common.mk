@@ -22,6 +22,9 @@ $(call inherit-product, vendor/samsung/m30s-common/m30s-common-vendor.mk)
 # Soong namespaces
 $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
 
+# Debug utils
+$(call inherit-product, hardware/samsung-ext/interfaces/debug-tools/debug.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
@@ -289,6 +292,11 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshim_sensorndkbridge
+
+# Samsung Ext
+PRODUCT_PACKAGES += \
+    FlashControl \
+    SmartCharge
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
