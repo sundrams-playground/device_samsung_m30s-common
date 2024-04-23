@@ -67,9 +67,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5-service_64.samsung \
     libsensorndkbridge
 
-PRODUCT_PACKAGES += \
-    libhwjpeg
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images_vendor
