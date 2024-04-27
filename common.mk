@@ -97,6 +97,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungDoze
 
+PRODUCT_PACKAGES += \
+    libGrallocWrapper
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
