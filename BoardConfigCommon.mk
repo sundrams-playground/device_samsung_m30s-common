@@ -54,7 +54,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # Camera
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
 SOONG_CONFIG_samsungCameraVars += extra_ids
-SOONG_CONFIG_samsungCameraVars_extra_ids := 0,1,2
+SOONG_CONFIG_samsungCameraVars_extra_ids := 4,20,23,50,52,54
 
 # Display
 TARGET_SCREEN_DENSITY := 420
