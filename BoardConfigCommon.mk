@@ -56,6 +56,8 @@ SOONG_CONFIG_NAMESPACES += samsungCameraVars
 SOONG_CONFIG_samsungCameraVars += extra_ids
 SOONG_CONFIG_samsungCameraVars_extra_ids := 0,1,2
 
+BOARD_HWJPEG_ANDROID_VERSION := 11
+
 # Display
 TARGET_SCREEN_DENSITY := 420
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
