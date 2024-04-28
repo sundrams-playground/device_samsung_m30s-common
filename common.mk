@@ -97,8 +97,8 @@ PRODUCT_PACKAGES += \
     libion
 
 # Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 PRODUCT_PACKAGES += \
     libGrallocWrapper
