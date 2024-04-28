@@ -84,12 +84,12 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/samsung/m30s
-TARGET_KERNEL_CONFIG := m30s_defconfig
+TARGET_KERNEL_CONFIG := exynos9610-m30s_core_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 LLVM_IAS=1 HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 TARGET_KERNEL_OPTIONAL_LD := true
-TARGET_KERNEL_CLANG_VERSION := r383902
-BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
+TARGET_KERNEL_CLANG_VERSION := proton
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/proton-clang
 
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
