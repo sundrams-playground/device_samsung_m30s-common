@@ -59,9 +59,6 @@ ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.use_color_management=true
 
-## Power HAL
-vendor.powerhal.disp.idle_support=false
-
 ## Samsung specific
 ro.product_ship=true
 # Set csc support in OMX
