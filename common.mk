@@ -161,6 +161,10 @@ PRODUCT_PACKAGES += \
     libkeymaster4_1support.vendor:64
 
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.samsung
+
 # Livedisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.samsung-exynos

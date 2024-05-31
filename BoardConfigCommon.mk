@@ -9,6 +9,10 @@ COMMON_PATH := device/samsung/m30s-common
 # Inherit proprietary vendor configuartion
 include vendor/samsung/m30s-common/BoardConfigVendor.mk
 
+## Include path
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
+## Hacks
 BUILD_BROKEN_DUP_RULES := true
 
 # Architecture
