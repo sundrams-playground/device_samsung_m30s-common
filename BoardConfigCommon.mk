@@ -10,7 +10,7 @@ COMMON_PATH := device/samsung/m30s-common
 include vendor/samsung/m30s-common/BoardConfigVendor.mk
 
 ## Include path
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+$(call soong_config_set,samsungVars,target_specific_header_path,$(COMMON_PATH)/include)
 
 ## Hacks
 BUILD_BROKEN_DUP_RULES := true
