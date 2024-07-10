@@ -31,10 +31,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     audio.r_submix.default \
-    audio.usb.default \
-    libaudioroute \
-    libtinyalsa \
-    libtinycompress
+    audio.usb.default
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
