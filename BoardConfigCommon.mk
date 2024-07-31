@@ -56,6 +56,8 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Camera
+$(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
+
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
 SOONG_CONFIG_samsungCameraVars += extra_ids
 SOONG_CONFIG_samsungCameraVars += camera_32bit
