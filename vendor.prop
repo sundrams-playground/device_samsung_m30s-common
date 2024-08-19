@@ -66,9 +66,6 @@ ro.surface_flinger.use_color_management=true
 # Media
 debug.stagefright.c2inputsurface=-1
 
-## Power HAL
-vendor.powerhal.disp.idle_support=false
-
 ## Samsung specific
 ro.product_ship=true
 # Set csc support in OMX
