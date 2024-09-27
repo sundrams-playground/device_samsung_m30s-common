@@ -60,12 +60,8 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Camera
 $(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
-
-SOONG_CONFIG_NAMESPACES += samsungCameraVars
-#SOONG_CONFIG_samsungCameraVars += extra_ids
 SOONG_CONFIG_samsungCameraVars += camera_32bit
 SOONG_CONFIG_samsungCameraVars_camera_32bit := true
-#SOONG_CONFIG_samsungCameraVars_extra_ids := 4,20,23,50,52,54
 
 BOARD_HWJPEG_ANDROID_VERSION := 11
 
@@ -78,7 +74,7 @@ $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 
 # DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_DEVICE).cfg
+# BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_DEVICE).cfg
 
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -91,12 +87,16 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_KERNEL_SOURCE := kernel/samsung/m30s
-TARGET_KERNEL_CONFIG := m30s_defconfig
-TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/prebuilts/Image
+TARGET_PREBUILT_DTB := $(COMMON_PATH)/prebuilts/dtb.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_PREBUILT_DTBOIMAGE := $(COMMON_PATH)/prebuilts/dtbo.img
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 LLVM_IAS=1 HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-TARGET_KERNEL_OPTIONAL_LD := true
-TARGET_KERNEL_CLANG_VERSION := r383902
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/prebuilts/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
+    $(COMMON_PATH)/prebuilts/Image:kernel \
+    $(COMMON_PATH)/prebuilts/dtbo.img:$(TARGET_COPY_OUT)/dtbo.img
 
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
@@ -133,7 +133,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/product.prop
 
 # Recovery
-BOARD_INCLUDE_RECOVERY_DTBO := true
+#BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9611
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 
