@@ -75,6 +75,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+# Debug tool
+$(call inherit-product, hardware/samsung-ext/interfaces/debug-tools/debug.mk)
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl:64 \
