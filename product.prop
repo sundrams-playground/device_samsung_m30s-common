@@ -1,7 +1,7 @@
 # Device Mask
-ro.build.fingerprint=google/barbet/barbet:14/AP2A.240705.004/11875680:user/release-keys
+ro.build.fingerprint=google/akita/akita:14/AP2A.240905.003.E1/12235207:user/release-keys
 ro.product.brand=google
-ro.product.device=barbet
+ro.product.device=akita
 ro.product.manufacturer=Google
-ro.product.model=Pixel 5a
-ro.product.name=barbet
+ro.product.model=Pixel 8a
+ro.product.name=akita
