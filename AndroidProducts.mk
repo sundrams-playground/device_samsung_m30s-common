@@ -14,9 +14,10 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/m30s.mk
 
-ifeq ($(TARGET_DEVICE),m30s)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
-include $(DEVICE_PATH)/AndroidBoard.mk
-endif
+COMMON_LUNCH_CHOICES := \
+    m30s-eng \
+    m30s-user \
+    m30s-userdebug

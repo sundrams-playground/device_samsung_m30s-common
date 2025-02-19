@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/samsung/m30s-common
+DEVICE_PATH := device/samsung/m30s
 
 # Inherit proprietary vendor configuartion
-include vendor/samsung/m30s-common/BoardConfigVendor.mk
+include vendor/samsung/m30s/BoardConfigVendor.mk
 
 ## Include path
-$(call soong_config_set,samsungVars,target_specific_header_path,$(COMMON_PATH)/include)
+$(call soong_config_set,samsungVars,target_specific_header_path,$(DEVICE_PATH)/include)
 
 ## Hacks
 BUILD_BROKEN_DUP_RULES := true
@@ -76,7 +76,7 @@ $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 
 # DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
-# BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_DEVICE).cfg
+# BOARD_DTBO_CFG := $(DEVICE_PATH)/configs/kernel/$(TARGET_DEVICE).cfg
 
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -87,20 +87,25 @@ TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Init
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/init/init.vendor.rilchip.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilchip.rc \
+    $(DEVICE_PATH)/configs/init/init.vendor.rilcommon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilcommon.rc
+
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_NO_KERNEL := false
-TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/prebuilts/Image
-TARGET_PREBUILT_DTB := $(COMMON_PATH)/prebuilts/dtb.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/Image
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilts/dtb.img
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
-BOARD_PREBUILT_DTBOIMAGE := $(COMMON_PATH)/prebuilts/dtbo.img
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 LLVM_IAS=1 HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/prebuilts/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
-    $(COMMON_PATH)/prebuilts/Image:kernel \
-    $(COMMON_PATH)/prebuilts/dtbo.img:$(TARGET_COPY_OUT)/dtbo.img
+    $(DEVICE_PATH)/prebuilts/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
+    $(DEVICE_PATH)/prebuilts/Image:kernel \
+    $(DEVICE_PATH)/prebuilts/dtbo.img:$(TARGET_COPY_OUT)/dtbo.img
 
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
@@ -110,8 +115,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
 
 # VINTF (Vendor Interface)
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/device_manifest.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 57671680
@@ -125,6 +131,11 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 629145600
 
 BOARD_ROOT_EXTRA_FOLDERS := efs
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
+
 # Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := universal9611
@@ -133,15 +144,15 @@ TARGET_SOC := exynos9611
 include hardware/samsung_slsi-linaro/config/BoardConfig9611.mk
 
 ## Properties
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
 #BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9611
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/configs/init/fstab.exynos9611
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -153,7 +164,7 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # USB
 $(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)

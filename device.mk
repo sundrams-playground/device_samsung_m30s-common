@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/samsung/m30s-common
+DEVICE_PATH := device/samsung/m30s
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/samsung/m30s-common/m30s-common-vendor.mk)
+$(call inherit-product, vendor/samsung/m30s/m30s-vendor.mk)
 
 # Soong namespaces
 $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
@@ -41,10 +41,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_default_stream_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_default_stream_volumes.xml \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_product_strategies.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_product_strategies.xml \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_stream_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_stream_volumes.xml \
-    $(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(COMMON_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    $(COMMON_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+    $(DEVICE_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Biometric Fingerprint
 PRODUCT_PACKAGES += \
@@ -129,21 +129,21 @@ PRODUCT_PACKAGES += \
 
 # init
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/fstab.exynos9611:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos9611 \
-    $(COMMON_PATH)/configs/init/fstab.exynos9611:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos9611 \
-    $(COMMON_PATH)/configs/init/init.exynos9611.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos9611.rc \
-    $(COMMON_PATH)/configs/init/init.exynos9611.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos9611.usb.rc \
-    $(COMMON_PATH)/configs/init/init.recovery.exynos9611.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9611.rc \
-    $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
-    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+    $(DEVICE_PATH)/configs/init/fstab.exynos9611:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos9611 \
+    $(DEVICE_PATH)/configs/init/fstab.exynos9611:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos9611 \
+    $(DEVICE_PATH)/configs/init/init.exynos9611.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos9611.rc \
+    $(DEVICE_PATH)/configs/init/init.exynos9611.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos9611.usb.rc \
+    $(DEVICE_PATH)/configs/init/init.recovery.exynos9611.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9611.rc \
+    $(DEVICE_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
+    $(DEVICE_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
 
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl \
-    $(COMMON_PATH)/configs/keylayout/uinput-sec-fp.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-sec-fp.kl
+    $(DEVICE_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl \
+    $(DEVICE_PATH)/configs/keylayout/uinput-sec-fp.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-sec-fp.kl
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -157,7 +157,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
+    $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
 
 # Memtrack
 PRODUCT_PACKAGES += \
@@ -190,8 +190,7 @@ PRODUCT_PACKAGES += \
     libOMX.Exynos.WMV.Decoder
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
 # Permissions
@@ -239,7 +238,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    $(DEVICE_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -247,16 +246,12 @@ PRODUCT_PACKAGES += \
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+    $(DEVICE_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # Protobuf CPP
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
-
-# Remove packages
-PRODUCT_PACKAGES += \
-    RemovePkgs
 
 # Ril
 PRODUCT_PACKAGES += \
@@ -277,7 +272,7 @@ PRODUCT_PACKAGES += \
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH) \
+    $(DEVICE_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
@@ -289,7 +284,7 @@ PRODUCT_PACKAGES += \
     thermal_symlinks
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
+    $(DEVICE_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # Update
 AB_OTA_UPDATER := false
@@ -321,8 +316,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(COMMON_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
-    $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_CFI_INCLUDE_PATHS += hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib

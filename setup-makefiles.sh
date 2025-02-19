@@ -8,6 +8,9 @@
 
 set -e
 
+export DEVICE=m30s
+export VENDOR=samsung
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
@@ -21,11 +24,11 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-# Initialize the helper for common
-setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+# Initialize the helper for device
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "m307f"
+write_headers "${DEVICE}"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
