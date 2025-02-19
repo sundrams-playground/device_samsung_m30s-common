@@ -110,6 +110,10 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
+# libinit
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):init_m30s
+TARGET_RECOVERY_DEVICE_MODULES := libinit_m30s
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
