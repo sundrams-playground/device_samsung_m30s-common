@@ -308,7 +308,7 @@ on post-fs-data
 
 on boot
 # SSWAP
-    write /proc/sys/vm/swappiness 130
+    write /proc/sys/vm/swappiness 80
 
     write /proc/sys/vm/min_free_order_shift 4
 
