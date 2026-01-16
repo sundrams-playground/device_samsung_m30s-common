@@ -5,3 +5,6 @@ on init
 
     write /sys/class/graphics/fb0/blank 1
     write /sys/class/graphics/fb0/blank 0
+
+on fs && property:ro.boot.super_partition=*
+    symlink /dev/block/by-name/${ro.boot.super_partition} /dev/block/by-name/super
