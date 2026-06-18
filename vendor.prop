@@ -37,11 +37,6 @@ ro.surface_flinger.supports_background_blur=1
 ro.sf.blurs_are_expensive=1
 ro.launcher.blur.appLaunch=0
 
-## HWUI
-debug.hwui.use_hint_manager=true
-debug.hwui.target_cpu_time_percent=40
-ro.hwui.render_ahead=20
-
 ## Dalvik
 dalvik.vm.lockprof.threshold=500
 
